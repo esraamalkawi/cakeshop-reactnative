@@ -5,7 +5,7 @@ import { Text } from "react-native";
 import { Center, Spinner, List, Box } from "native-base";
 import ProductItem from "./ProductItem";
 
-const ProductList = ({ productsIds }) => {
+const ProductList = ({ productsIds, navigation }) => {
   const products = useSelector((state) => state.products.products);
   const productLoading = useSelector((state) => state.products.loading);
   // console.log(props);
@@ -18,13 +18,9 @@ const ProductList = ({ productsIds }) => {
   const shopProducts = productsIds.map((_product) =>
     products.find((product) => product.id === _product.id)
   );
-  const productList = shopProducts.map((product) => (
-    <ProductItem key={product.id} product={product} />
+  const productList = products.map((product) => (
+    <ProductItem key={product.id} navigation={navigation} product={product} />
   ));
-
-  // const productList = products.map((product) => (
-  //   <ProductItem key={product.id} product={product} />
-  // ));
 
   return (
     <Center flex={1}>

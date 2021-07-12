@@ -1,10 +1,15 @@
 import React from "react";
 import { Button } from "native-base";
 import { StyleSheet, View } from "react-native";
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.titleView}>
-      <Button onPress={() => alert("hello world")}>Press</Button>
+      <Button onPress={() => navigation.navigate("ShopList")}>
+        GO TO SHOPLIST
+      </Button>
+      <Button onPress={() => navigation.navigate("ProductList")}>
+        GO TO PRODUCTLIST
+      </Button>
     </View>
   );
 };

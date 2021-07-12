@@ -1,8 +1,12 @@
 import React from "react";
 import { List } from "native-base";
 
-const ShopItem = ({ shop }) => {
-  return <List.Item>{shop.name}</List.Item>;
+const ShopItem = ({ navigation, shop }) => {
+  return (
+    <List.Item onPress={() => navigation.navigate("ShopDetail", { shop })}>
+      {shop.name}
+    </List.Item>
+  );
 };
 
 export default ShopItem;

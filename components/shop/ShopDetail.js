@@ -1,12 +1,13 @@
 import React from "react";
 import { Center, Image } from "native-base";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { Text, StyleSheet } from "react-native";
 import ProductList from "../product/ProductList";
 
-const ShopDetail = () => {
-  const shop = useSelector((state) => state.shops.shops[2]);
+const ShopDetail = ({ route }) => {
+  // const shop = useSelector((state) => state.shops.shops[2]);
   // console.log(shop);
+  const { shop } = route.params;
   return (
     <>
       <Center flex={1}>
