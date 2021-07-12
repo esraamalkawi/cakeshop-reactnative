@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React from "react";
+import { NativeBaseProvider } from "native-base";
+import Home from "./components/Home";
+import { Provider } from "react-redux";
+import store from "./store/index";
+import ShopList from "./components/shop/ShopList";
+import ShopDetail from "./components/shop/ShopDetail";
+import ProductList from "./components/product/ProductList";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <NativeBaseProvider>
+        {/* <Home /> */}
+        {/* <ShopList /> */}
+        <ShopDetail />
+        {/* <ProductList /> */}
+      </NativeBaseProvider>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
