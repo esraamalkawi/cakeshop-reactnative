@@ -6,4 +6,6 @@ export const FETCH_SHOP = "FETCH_SHOP";
 // export const CREATE_SHOP = "CREATE_SHOP";
 // export const CREATE_USER = "CREATE_USER";
 // export const SET_USER = "SET_USER";
-export const ADD_TO_CART = "ADD_TO_CART";
+export const ADD_ITEM = "ADD_ITEM";
+export const DELETE_ITEM = "DELETE_ITEM";
+export const CHECKOUT = "CHECKOUT";

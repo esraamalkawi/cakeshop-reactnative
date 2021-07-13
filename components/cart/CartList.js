@@ -1,20 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Text } from "react-native";
-import { Center, Spinner, List, Box } from "native-base";
+import { Center, Button, List, Box } from "native-base";
 import CartItem from "./CartItem";
+import { checkoutCart } from "../../store/actions/cartActions";
 
 const CartList = ({ navigation }) => {
   const items = useSelector((state) => state.items.items);
   const allProducts = useSelector((state) => state.products.products);
-  // const itemLoading = useSelector((state) => state.items.loading);
-  // if (itemLoading)
-  //   return (
-  //     <Center flex={1}>
-  //       <Spinner />
-  //     </Center>
-  //   );
+  const dispatch = useDispatch();
+
+  const handleCheckOut = () => {
+    dispatch(checkoutCart());
+  };
 
   const itemList = items
     .map((item) => ({
@@ -31,6 +30,7 @@ const CartList = ({ navigation }) => {
         <Text>YOUR CART</Text>
         <List>{itemList}</List>
       </Box>
+      <Button onPress={handleCheckOut}>check out</Button>
     </Center>
   );
 };
