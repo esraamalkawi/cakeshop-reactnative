@@ -8,7 +8,7 @@ import ProductItem from "./ProductItem";
 const ProductList = ({ productsIds, navigation }) => {
   const products = useSelector((state) => state.products.products);
   const productLoading = useSelector((state) => state.products.loading);
-  // console.log(props);
+  console.log("product list", productsIds);
   if (productLoading)
     return (
       <Center flex={1}>

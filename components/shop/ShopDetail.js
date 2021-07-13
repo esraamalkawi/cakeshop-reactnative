@@ -4,17 +4,18 @@ import { Center, Image } from "native-base";
 import { Text, StyleSheet } from "react-native";
 import ProductList from "../product/ProductList";
 
-const ShopDetail = ({ route }) => {
-  // const shop = useSelector((state) => state.shops.shops[2]);
-  // console.log(shop);
+const ShopDetail = ({ navigation, route }) => {
+  //  const shop = useSelector((state) => state.shops.shops[2]);
+
   const { shop } = route.params;
+  console.log(shop.products, "shop detail");
   return (
     <>
       <Center flex={1}>
         <Text>{shop.name}</Text>
         <Image style={styles.image} source={{ uri: shop.image }}></Image>
       </Center>
-      <ProductList productsIds={shop.products} />
+      <ProductList navigation={navigation} productsIds={shop.products} />
     </>
   );
 };

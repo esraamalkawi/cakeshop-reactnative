@@ -31,7 +31,6 @@ const StackNavigator = () => {
           return { title: route.params.shop.name };
         }}
       />
-      <Screen name="ProductList" component={ProductList} />
       <Screen
         name="ProductDetail"
         component={ProductDetail}
