@@ -7,6 +7,8 @@ import ShopDetail from "../shop/ShopDetail";
 import shopReducer from "../../store/reducers/shopReducer";
 import ProductList from "../product/ProductList";
 import ProductDetail from "../product/ProductDetail";
+import CartButton from "../button/CartButton";
+import CartList from "../cart/CartList";
 
 // console.log(Stack);
 
@@ -34,14 +36,13 @@ const StackNavigator = () => {
       <Screen
         name="ProductDetail"
         component={ProductDetail}
-        options={({ route }) => {
-          return { title: route.params.product.name };
-        }}
+        options={({ navigation, route }) => ({
+          title: route.params.product.name,
+          headerRight: () => <CartButton navigation={navigation} />,
+        })}
       />
+      <Screen name="CartList" component={CartList} />
     </Navigator>
   );
-  {
-    /* </NavigationContainer> */
-  }
 };
 export default StackNavigator;

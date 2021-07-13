@@ -18,7 +18,7 @@ const ProductList = ({ productsIds, navigation }) => {
   const shopProducts = productsIds.map((_product) =>
     products.find((product) => product.id === _product.id)
   );
-  const productList = products.map((product) => (
+  const productList = shopProducts.map((product) => (
     <ProductItem key={product.id} navigation={navigation} product={product} />
   ));
 
