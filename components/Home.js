@@ -7,6 +7,8 @@ const Home = ({ navigation }) => {
       <Button onPress={() => navigation.navigate("ShopList")}>
         GO TO SHOPLIST
       </Button>
+      {/* <Button onPress={() => navigation.navigate("Signin")}>Signin</Button>
+      <Button onPress={() => navigation.navigate("Signup")}>Signup</Button> */}
     </View>
   );
 };

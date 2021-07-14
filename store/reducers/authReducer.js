@@ -1,23 +1,23 @@
-// import * as actionTypes from "../actions/types";
+import * as actionTypes from "../actions/types";
 
-// const initialState = {
-//   user: null,
-// };
+const initialState = {
+  user: null,
+};
 
-// const userReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     // case actionTypes.SET_USER:
-//     //   return {
-//     //     ...state,
-//     //     users: [...state.users, action.payload],
-//     //   };
-//     case actionTypes.SET_USER:
-//       return {
-//         ...state,
-//         user: action.payload,
-//       };
-//     default:
-//       return state;
-//   }
-// };
-// export default userReducer;
+const userReducer = (state = initialState, action) => {
+  switch (action.type) {
+    // case actionTypes.SET_USER:
+    //   return {
+    //     ...state,
+    //     users: [...state.users, action.payload],
+    //   };
+    case actionTypes.SET_USER:
+      return {
+        ...state,
+        user: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+export default userReducer;

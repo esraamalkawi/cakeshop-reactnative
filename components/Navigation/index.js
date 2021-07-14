@@ -1,14 +1,15 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Home";
 import ShopList from "../shop/ShopList";
 import ShopDetail from "../shop/ShopDetail";
-import shopReducer from "../../store/reducers/shopReducer";
-import ProductList from "../product/ProductList";
+
 import ProductDetail from "../product/ProductDetail";
 import CartButton from "../button/CartButton";
 import CartList from "../cart/CartList";
+import Signin from "../authentication/Signin";
+import Signup from "../authentication/Signup";
 
 // console.log(Stack);
 
@@ -42,6 +43,8 @@ const StackNavigator = () => {
         })}
       />
       <Screen name="CartList" component={CartList} />
+      <Screen name="Signin" component={Signin} />
+      <Screen name="Signup" component={Signup} />
     </Navigator>
   );
 };
