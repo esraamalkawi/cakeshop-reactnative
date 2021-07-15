@@ -14,8 +14,8 @@ const CartList = ({ navigation }) => {
 
   const handleCheckOut = () => {
     if (user) {
-      dispatch(checkoutCart());
-      // console.log("user here", user);
+      dispatch(checkoutCart(items));
+      console.log("user here", user);
     } else
       Alert.alert(" login", "you must login first", [
         {

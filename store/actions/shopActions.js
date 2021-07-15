@@ -1,10 +1,10 @@
-import axios from "axios";
+import instance from "./instance";
 import * as actionTypes from "./types";
 
 export const fetchShops = () => {
   return async (dispatch) => {
     try {
-      const res = await axios.get("http://192.168.1.82:8000/shops");
+      const res = await instance.get("/shops");
       dispatch({
         type: actionTypes.FETCH_SHOP,
         payload: res.data,

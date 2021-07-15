@@ -1,4 +1,4 @@
-import axios from "axios";
+import instance from "./instance";
 import * as actionTypes from "./types";
 
 export const addItemToCart = (newItem) => ({
@@ -11,6 +11,11 @@ export const deleteItemFromCart = (itemId) => ({
   payload: itemId,
 });
 
-export const checkoutCart = () => ({
-  type: actionTypes.CHECKOUT,
-});
+export const checkoutCart = (items) => async (dispatch) => {
+  const res = await instance.post("/checkout", items);
+
+  dispatch({
+    type: actionTypes.CHECKOUT,
+    payload: [],
+  });
+};

@@ -1,4 +1,4 @@
-import axios from "axios";
+import instance from "./instance";
 import * as actionTypes from "./types";
 
 // export const deleteProduct = (productId) => {
@@ -59,7 +59,7 @@ import * as actionTypes from "./types";
 export const fetchProducts = () => {
   return async (dispatch) => {
     try {
-      const res = await axios.get("http://192.168.1.82:8000/products");
+      const res = await instance.get("/products");
       dispatch({
         type: actionTypes.FETCH_PRODUCT,
 
